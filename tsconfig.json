@@ -8,11 +8,15 @@
     "outDir": "dist",
     "lib": [
       "esnext", "dom", "es6"
+    ],
+    "types": [
+      "mocha"
     ]
   },
   "exclude": [
-        "./dist", 
-        "node_modules",
-        "./src/**/*.spec.ts"
+    "./dist", 
+    "node_modules",
+    "./src/**/*.spec.ts",
+    "./src/**/*.check.ts"
     ]
 }
