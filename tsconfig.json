@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": [
+      "esnext", "dom", "es6"
+    ]
+  },
+  "exclude": [
+        "./dist", 
+        "node_modules",
+        "./src/**/*.spec.ts"
+    ]
+}
