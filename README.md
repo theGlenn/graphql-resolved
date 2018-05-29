@@ -4,6 +4,8 @@
 This project provide a **middleware**-like approach to GraphQL servers
 enabling the composition of resolvers chains through a simple and expressive API.
 
+[![NPM](https://nodei.co/npm/graphql-resolvers-chain.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/graphql-resolvers-chain/)
+
 ## Installing
 
 #### npm
