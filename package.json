@@ -4,6 +4,9 @@
   "description": "Framework agnostic resolvers creation for GraphQL",
   "main": "index.js",
   "license": "MIT",
+  "keywords": [
+    
+  ],
   "scripts": {
     "test": "mocha --require ts-node/register src/**/**.spec.ts",
     "build": "rm -rf dist && tsc"
@@ -20,5 +23,13 @@
     "npm-run-all": "4.1.2",
     "ts-node": "6.0.2",
     "typescript": "2.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theGlenn/graphql-resolvers-chain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theGlenn/graphql-resolvers-chain/issues"
+  },
+  "homepage": "https://github.com/theGlenn/graphql-resolvers-chain"
 }
