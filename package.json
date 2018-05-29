@@ -1,7 +1,7 @@
 {
-  "name": "graphql-resolvers-apply",
+  "name": "graphql-resolvers-chain",
   "version": "1.0.0",
-  "description": "Framework agnostic resolvers creation for GraphQ",
+  "description": "Framework agnostic resolvers creation for GraphQL",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
