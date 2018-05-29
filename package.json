@@ -1,12 +1,10 @@
 {
   "name": "graphql-resolvers-chain",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Framework agnostic resolvers creation for GraphQL",
   "main": "index.js",
   "license": "MIT",
-  "keywords": [
-    
-  ],
+  "keywords": [],
   "scripts": {
     "test": "mocha --require ts-node/register src/**/**.spec.ts",
     "build": "rm -rf dist && tsc"
