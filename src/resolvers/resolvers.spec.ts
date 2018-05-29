@@ -1,6 +1,6 @@
 import * as mocha from 'mocha';
 import { expect } from 'chai';
-import { chain, ResolverChained, Resolvers, protect } from './resolvers';
+import { chain, ResolverChained, Resolvers, protect } from './';
 
 interface User {
   id: number

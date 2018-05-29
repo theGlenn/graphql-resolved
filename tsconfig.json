@@ -3,6 +3,7 @@
     "target": "es5",
     "moduleResolution": "node",
     "module": "commonjs",
+    "declaration": true,
     "sourceMap": true,
     "rootDir": "src",
     "outDir": "dist",
@@ -15,7 +16,7 @@
   },
   "exclude": [
     "./dist", 
-    "node_modules",
+    "./node_modules",
     "./src/**/*.spec.ts",
     "./src/**/*.check.ts"
     ]
