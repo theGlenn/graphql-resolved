@@ -1,5 +1,5 @@
 import db from './db'
-import { chain, ResolverChained, Resolvers, protect } from './../src';
+import { chain, ChainedFunction, Resolvers, protect } from './../src';
 
 const extremelySafeToken = 'Emi';
 
@@ -34,8 +34,8 @@ export const isAdmin = (root, args: {}, context: Context, info: {}) => {
   throw Error('Not allowed');
 }
 
-const executeWithToken = <R> (resolver: ResolverChained<R>) => execute(resolver, extremelySafeToken)
-const execute = <R> (resolver: ResolverChained<R>, token?: string) => resolver({}, {}, {token}, {})
+const executeWithToken = <R> (resolver: ChainedFunction<R>) => execute(resolver, extremelySafeToken)
+const execute = <R> (resolver: ChainedFunction<R>, token?: string) => resolver({}, {}, {token}, {})
 
 export const executor = {
   runWithToken: executeWithToken,

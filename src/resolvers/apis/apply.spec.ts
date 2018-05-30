@@ -1,6 +1,6 @@
 import * as mocha from 'mocha';
 import { expect } from 'chai';
-import { ResolverChained, Resolvers, apply } from '../';
+import { Resolvers, apply } from '../';
 import { isAuthenticated, isAdmin, getMe, getInfo, executor } from './../../../test/resolvers'
 
 describe('apply() Api', () => {
@@ -18,6 +18,7 @@ describe('apply() Api', () => {
       expect(await executor.run(resolversMap.getMe)).to.throw('Not authenticated');
     } catch(e){}
   });
+  
   it('Should return me user', async () => {
     try {
       const resolverChain: any = apply({

@@ -1,6 +1,6 @@
 import * as mocha from 'mocha';
 import { expect } from 'chai';
-import { chain, ResolverChained, Resolvers, protect } from '../';
+import { chain, Resolvers, protect } from '../';
 import { isAuthenticated, isAdmin, getMe, getInfo, executor } from './../../../test/resolvers'
 
 describe('chain() Api', () => {

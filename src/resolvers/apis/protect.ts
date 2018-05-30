@@ -1,4 +1,4 @@
-import { ResolverChained, ResolverFunction, ResolversMap, Resolvers } from './../resolvers.types';
+import { ResolverFunction, ResolversMap, Resolvers, ChainedFunction } from './../resolvers.types';
 import { chain, apply } from './';
 
 export interface ProtectArgs<R> {
