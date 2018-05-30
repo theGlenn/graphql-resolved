@@ -13,7 +13,7 @@
     "apollo"
   ],
   "scripts": {
-    "test": "mocha --require ts-node/register src/**/**.spec.ts",
+    "test": "mocha --require ts-node/register src/**/**/**.spec.ts",
     "build": "rm -rf dist && tsc"
   },
   "devDependencies": {
