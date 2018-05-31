@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 ;
-var Chainable = /** @class */ (function () {
+var Chainable = (function () {
     function Chainable(resolver) {
         this.resolver = resolver;
     }

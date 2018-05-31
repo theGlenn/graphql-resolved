@@ -4,4 +4,4 @@ export interface ProtectArgs<R> {
     all?: ResolversMap;
     using: Resolvers;
 }
-export declare const protect: <R>({ it, all, using }: ProtectArgs<R>) => ResolversMap | ChainedFunction<any>;
+export declare const protect: <R>({it, all, using}: ProtectArgs<R>) => ResolversMap | ChainedFunction<any>;

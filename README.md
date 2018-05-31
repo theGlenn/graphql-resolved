@@ -1,11 +1,12 @@
 # :shipit: graphql-resolved :shipit:
-`graphql-resolved` provides a **middleware**-like capability to your GraphQL servers by enabling the combination of multiple resolvers through a simple and expressive API. 
+> Provides a **middleware**-like capability to your GraphQL api by enabling the combination of multiple resolvers through a simple and expressive API. 
 
 Resolvers solved :shipit:
 
 [![NPM][npm-image]][npm-url]
 
 [![Build Status][travis-image]][travis-url]
+[![npm version](https://badge.fury.io/js/graphql-resolved.svg)](https://badge.fury.io/js/graphql-resolved)
 
 [npm-url]: https://nodei.co/npm/graphql-resolved/
 [npm-image]: https://nodei.co/npm/graphql-resolved.png?downloads=true&downloadRank=true&stars=true
@@ -16,26 +17,26 @@ Resolvers solved :shipit:
 ## Installing
 
 #### npm
-```
+```bash
 npm i graphql-resolved --save
 ```
 
 #### yarn
 
-```
+```bash
 yarn add graphql-resolved
 ```
 
 ## Usage
 ### Create your first resolver using the `chain`, `protect` or `apply` api
 
-#### `chain` api
-
-Create a new resolver chaining the ones in the supplied array. *The order matters from left to right*.
-The last resolver being the one return the final expect value.
+#### `chain`
+Return a resolver that is the sum of the ones in the supplied array.
+*The execution order follows the order from left to right*.
+The last resolver being the one to return the final expect value.
 ```chain([1, 2, 3, 4])``` 
 
-```javascript
+```ts
 import { chain } from 'graphql-resolved';
 import { isAuthenticated, isAdmin, isTopContributer } from './auth/resolvers';
 import * as UserResolvers from './user/resolvers';
@@ -51,23 +52,23 @@ const resolvers = {
 }
 ```
 
-#### `apply` api
-Applies all the `resolvers` to all of those in the `to` object.
-- `resolvers` (*The order matters from left to right*)
-```javascript
+#### `apply`
+Applies a list of `resolvers` to each of those supplied by the `to` object.
+- `resolvers` *The execution order follows the order from left to right*.
+```ts
 const allUserResolvers = apply({ resolvers: [isAuthenticated], to: UserResolvers })
 const Query = {
   ...allUserResolvers
 }
 ```
 
-#### `protect` api
+#### `protect`
 The protect key work take three arguments:
 - `it` (Optional) a resolver function, if supplied `protect` returns a new resolver function
-- `all`(Optional) an object with resolvers, if supplied `protect` returns an object with the exact same resolvers names as keys
+- `all`(Optional) a map of resolvers, if supplied `protect` returns an object with the exact same resolvers names as keys
 - `using` a list of resolvers to apply(*The order matters from left to right*).
 
-```javascript
+```ts
 const getMe = protect({
   it: UserResolvers.getMe,
   using: [isAuthenticated]
