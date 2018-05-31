@@ -1,7 +1,5 @@
-import { ResolversMap, ResolverChained, Resolvers } from './../resolvers.types';
-import { ResolversChain} from './../resolvers.chain';
+import { ResolversMap, Resolvers } from './../resolvers.types';
 import { isArray, isApplyArgs } from './../resolvers.check';
-
 import { chain } from './chain';
 
 export interface ApplyArgs<R> {

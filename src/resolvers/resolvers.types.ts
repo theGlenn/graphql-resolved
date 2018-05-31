@@ -3,7 +3,7 @@ export interface ResolverFunction<Result> {
 }
 
 // A type that define composed resolvers it has to return a Promise
-export interface ResolverChained<FinalResult> extends ResolverFunction<FinalResult | any> {
+export interface ChainedFunction<FinalResult> extends ResolverFunction<FinalResult | any> {
   (root, args: {}, context: {}, info: {}): Promise<FinalResult | any>
 }
 
