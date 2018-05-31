@@ -1,16 +1,16 @@
-# graphql-resolved
+# :shipit: graphql-resolved :shipit:
 `graphql-resolved` provides a **middleware**-like capability to your GraphQL servers by enabling the combination of multiple resolvers through a simple and expressive API. 
 
 Resolvers solved :shipit:
 
 [![NPM][npm-image]][npm-url]
 
-[![Build status][travis-image]][travis-url]
+[![Build Status][travis-image]][travis-url]
 
 [npm-url]: https://nodei.co/npm/graphql-resolved/
 [npm-image]: https://nodei.co/npm/graphql-resolved.png?downloads=true&downloadRank=true&stars=true
 
-[travis-image]: https://img.shields.io/travis/theGlenn/graphql-resolvers-chain.svg?style=flat
+[travis-image]: https://travis-ci.com/theGlenn/graphql-resolvers-chain.svg?branch=master
 [travis-url]: https://travis-ci.com/theGlenn/graphql-resolvers-chain
 
 ## Installing
