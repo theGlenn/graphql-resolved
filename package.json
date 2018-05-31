@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/theGlenn/graphql-resolvers-chain.git"
+    "url": "https://github.com/theGlenn/graphql-resolved.git"
   },
   "bugs": {
-    "url": "https://github.com/theGlenn/graphql-resolvers-chain/issues"
+    "url": "https://github.com/theGlenn/graphql-resolved/issues"
   },
-  "homepage": "https://github.com/theGlenn/graphql-resolvers-chain"
+  "homepage": "https://github.com/theGlenn/graphql-resolved"
 }
