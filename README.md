@@ -1,3 +1,8 @@
+# DEPRECATED
+This project has been renamed to [graphql-resolved](https://nodei.co/npm/graphql-resolved/).
+
+Install using ` npm install graphql-resolved` instead.
+
 # graphql-resolvers-chain
 `graphql-resolvers-chain` is a framework/server agnostic resolvers creation tool for GraphQL
 
