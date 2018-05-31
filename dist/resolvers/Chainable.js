@@ -1,10 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 ;
-var ResolversAssembler = /** @class */ (function () {
-    function ResolversAssembler() {
+var Chainable = /** @class */ (function () {
+    function Chainable(resolver) {
+        this.resolver = resolver;
     }
-    ResolversAssembler.assemble = function (_a) {
+    Chainable.prototype.after = function (resolversToApply) {
+        var resolvers = resolversToApply.concat([this.resolver]);
+        return resolvers.reduce(function (previousResolver, currentResolver) {
+            return Chainable.assemble({
+                before: previousResolver,
+                next: currentResolver
+            });
+        });
+    };
+    Chainable.assemble = function (_a) {
         var before = _a.before, next = _a.next;
         return function (root, args, context, info) { return new Promise(function (resolve, reject) {
             try {
@@ -17,7 +27,7 @@ var ResolversAssembler = /** @class */ (function () {
             }
         }); };
     };
-    return ResolversAssembler;
+    return Chainable;
 }());
-exports.ResolversAssembler = ResolversAssembler;
-//# sourceMappingURL=resolvers.assembler.js.map
+exports.default = Chainable;
+//# sourceMappingURL=Chainable.js.map

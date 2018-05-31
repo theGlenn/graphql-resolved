@@ -1,2 +1,2 @@
-import { ResolverFunction, ResolverChained } from './../resolvers.types';
-export declare const chain: <R>(resolvers: ResolverFunction<any>[]) => ResolverChained<any> | ResolverChained<R>;
+import { ResolverFunction, ChainedFunction } from './../resolvers.types';
+export declare const chain: <R>(resolvers: ResolverFunction<any>[]) => ChainedFunction<any> | ChainedFunction<R>;

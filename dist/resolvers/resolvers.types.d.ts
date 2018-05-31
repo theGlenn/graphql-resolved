@@ -1,7 +1,7 @@
 export interface ResolverFunction<Result> {
     (root: any, args: {}, context: {}, info: {}): Promise<Result> | Result | never;
 }
-export interface ResolverChained<FinalResult> extends ResolverFunction<FinalResult | any> {
+export interface ChainedFunction<FinalResult> extends ResolverFunction<FinalResult | any> {
     (root: any, args: {}, context: {}, info: {}): Promise<FinalResult | any>;
 }
 export declare type Resolvers = Array<ResolverFunction<any>>;
