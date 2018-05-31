@@ -1,22 +1,29 @@
-# graphql-resolvers-chain
-`graphql-resolvers-chain` is a framework/server agnostic resolvers creation tool for GraphQL
+# graphql-resolved
+`graphql-resolved` provides a **middleware**-like capability to your GraphQL servers by enabling the combination of multiple resolvers through a simple and expressive API. 
 
-This project provide a **middleware**-like approach to GraphQL servers
-enabling the composition of resolvers chains through a simple and expressive API.
+Resolvers solved :shipit:
 
-[![NPM](https://nodei.co/npm/graphql-resolvers-chain.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/graphql-resolvers-chain/)
+[![NPM][npm-image]][npm-url]
+
+[![Build status][travis-image]][travis-url]
+
+[npm-url]: https://nodei.co/npm/graphql-resolved/
+[npm-image]: https://nodei.co/npm/graphql-resolved.png?downloads=true&downloadRank=true&stars=true
+
+[travis-image]: https://img.shields.io/travis/lucidogen/ts-project.svg?style=flat
+[travis-url]: https://travis-ci.org/lucidogen/graphql-resolved
 
 ## Installing
 
 #### npm
 ```
-npm i graphql-resolvers-chain --save
+npm i graphql-resolved --save
 ```
 
 #### yarn
 
 ```
-yarn add graphql-resolvers-chain
+yarn add graphql-resolved
 ```
 
 ## Usage
@@ -29,7 +36,7 @@ The last resolver being the one return the final expect value.
 ```chain([1, 2, 3, 4])``` 
 
 ```javascript
-import { chain } from 'graphql-resolvers-chain';
+import { chain } from 'graphql-resolved';
 import { isAuthenticated, isAdmin, isTopContributer } from './auth/resolvers';
 import * as UserResolvers from './user/resolvers';
 
