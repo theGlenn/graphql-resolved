@@ -4,5 +4,7 @@ import { chain, Resolvers, protect } from './';
 import { isAuthenticated, isAdmin, getMe } from './../../test/resolvers'
 
 describe('Resolvers function', () => {
+  it('Should throw (Not authenticated) error ', () => {
 
+  });
 });
