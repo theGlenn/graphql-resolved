@@ -12,6 +12,9 @@
     ],
     "types": [
       "mocha"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
     ]
   },
   "exclude": [

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var resolvers_check_1 = require("./../resolvers.check");
 var chain_1 = require("./chain");
+var isApplyArgs = function (args) { return ('resolvers' in args && 'into' in args); };
 exports.apply = function (args) {
     var resolversToApply = args.resolvers, independantResolvers = args.to;
-    if (resolvers_check_1.isApplyArgs(args)) {
+    if (isApplyArgs(args)) {
         throw new Error("Invalid arguments: should be an Array or object of shape\n    {\n      using: Resolvers\n      into : ResolversMap\n    }");
     }
     var chainedResolvers = {};

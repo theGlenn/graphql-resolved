@@ -1,11 +1,12 @@
-import { ResolversMap, Resolvers } from './../resolvers.types';
-import { isArray, isApplyArgs } from './../resolvers.check';
+import { ResolversMap, Resolvers } from './../types';
 import { chain } from './chain';
 
 export interface ApplyArgs<R> {
   resolvers: Resolvers
   to : ResolversMap
 }
+
+const isApplyArgs = (args: any) => ('resolvers' in args && 'into' in args)
 
 export const apply = <R>(args: ApplyArgs<R>) => {
   const { resolvers: resolversToApply, to: independantResolvers } = args;
