@@ -1,9 +1,8 @@
-import { ResolvableSequence, ResolverFunction, ChainedFunction, Resolvers } from './../resolvers.types';
-import { isArray, isApplyArgs } from './../resolvers.check';
+import { ResolvableSequence, ResolverFunction, PureResolverFunction, Resolvers } from './../types';
+import { isArray } from './../resolvers.check';
 
-export const chain = <R> (resolvers: Resolvers): ChainedFunction<R> | ChainedFunction<any> => {
+export const chain = <R = any> (resolvers: Resolvers): PureResolverFunction<R> => {
   if(isArray(resolvers)){
-    //const lastToResolve = resolvers.pop()
     return new ResolvableSequence(resolvers).resolved();
   }
 

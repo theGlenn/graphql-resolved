@@ -16,12 +16,11 @@ Resolvers solved :shipit:
 
 ## Installing
 
-#### npm
 ```bash
 npm i graphql-resolved --save
 ```
 
-#### yarn
+##### or
 
 ```bash
 yarn add graphql-resolved

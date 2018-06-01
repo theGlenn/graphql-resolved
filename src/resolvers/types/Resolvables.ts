@@ -1,24 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql'
-
-export interface ResolverFunction<Result = any> {
-  (root, args: {}, context: {}, info: GraphQLResolveInfo): Promise<Result> | Result | never
-}
-
-// A type that define composed resolvers it has to return a Promise
-export interface ChainedFunction<FinalResult = any> extends ResolverFunction<FinalResult> {
-  (root, args: {}, context: {}, info: GraphQLResolveInfo | any): Promise<FinalResult>
-}
-
-export interface ResolvedResolverFunction<FinalResult = any> extends ChainedFunction<FinalResult> {
-  (root, args: {}, context: {}, info: GraphQLResolveInfo | any): Promise<FinalResult>
-}
-
-export type Resolvers = Array<ResolverFunction>
-
-export interface ResolversMap {
-  [key:string]: ResolverFunction
-}
-
+import { ResolverFunction, PureResolverFunction } from './Resolvers'
 
 export interface Resolvable<R = any> {
   evaluate(root, args: {}, context: {}, info): Promise<R>
@@ -30,7 +11,7 @@ export function isResolvable(object: any): object is Resolvable {
 
 export type ResolvableSequenceArgs = Array<Resolvable | ResolverFunction>
 
-export class ResolvableSequence<R> {
+export class ResolvableSequence<R = any> {
   resolvables: Resolvable<R>[]
 
   constructor(resolvers: ResolvableSequenceArgs) {
@@ -43,7 +24,7 @@ export class ResolvableSequence<R> {
     })
   }
 
-  resolved(): ResolvedResolverFunction<R> {
+  resolved(): PureResolverFunction<R> {
     return (root, args: {}, context: {}, info) => {
       const firstToResolve = this.resolvables.shift();
       return this.resolvables.reduce((previousResolver, currentResolvable) => {
@@ -52,7 +33,6 @@ export class ResolvableSequence<R> {
     }
   }
 }
-
 
 export class SimpleResolvable<R = any> implements Resolvable<R> {
   constructor(private resolver: ResolverFunction<R>) { }

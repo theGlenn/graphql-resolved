@@ -1,4 +1,3 @@
 export * from './apis';
-export * from './resolvers.types';
+export * from './types';
 export * from './resolvers.check';
-export * from './Chainable';
