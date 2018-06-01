@@ -1,11 +1,9 @@
-import { ResolverFunction, ChainedFunction, Resolvers } from './../resolvers.types';
-import { isArray, isApplyArgs } from './../resolvers.check';
-import Chainable from './../Chainable';
+import { ResolvableSequence, ResolverFunction, PureResolverFunction, Resolvers } from './../types';
+import { isArray } from './../resolvers.check';
 
-export const chain = <R> (resolvers: Resolvers): ChainedFunction<R> | ChainedFunction<any> => {
+export const chain = <R = any> (resolvers: Resolvers): PureResolverFunction<R> => {
   if(isArray(resolvers)){
-    const lastToResolve = resolvers.pop()
-    return new Chainable(lastToResolve).after<R>(resolvers);
+    return new ResolvableSequence(resolvers).resolved();
   }
 
   throw new Error(`Invalid arguments: should be an Array or object of shape

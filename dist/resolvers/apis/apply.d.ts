@@ -1,4 +1,4 @@
-import { ResolversMap, Resolvers } from './../resolvers.types';
+import { ResolversMap, Resolvers } from './../types';
 export interface ApplyArgs<R> {
     resolvers: Resolvers;
     to: ResolversMap;
