@@ -34,8 +34,8 @@ export const isAdmin = (root, args: {}, context: Context, info: {}) => {
   throw Error('Not allowed');
 }
 
-const executeWithToken = <R> (resolver: ChainedFunction<R>) => execute(resolver, extremelySafeToken)
-const execute = <R> (resolver: ChainedFunction<R>, token?: string) => resolver({}, {}, {token}, {})
+const executeWithToken = (resolver: ChainedFunction) => execute(resolver, extremelySafeToken)
+const execute = (resolver: ChainedFunction, token?: string) => resolver({}, {}, {token}, {})
 
 export const executor = {
   runWithToken: executeWithToken,
