@@ -83,3 +83,23 @@ const Query = {
   ...adminResolvers
 }
 ```
+
+## Tests
+
+```bash
+npm test
+```
+
+##### or
+
+```bash
+yarn test
+```
+
+## Contributing
+
+Please feel free to drop an issue or propose a feature or pull request.
+
+## License
+
+MIT
