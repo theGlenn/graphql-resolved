@@ -1,3 +1,5 @@
+<div align="center"><img src="https://imgur.com/rdP6rmb.png" /></div>
+
 # :shipit: graphql-resolved :shipit:
 > Provides a **middleware**-like capability to your GraphQL api by enabling the combination of multiple resolvers through a simple and expressive API. 
 
