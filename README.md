@@ -11,8 +11,8 @@ Resolvers solved :shipit:
 [npm-url]: https://nodei.co/npm/graphql-resolved/
 [npm-image]: https://nodei.co/npm/graphql-resolved.png?downloads=true&downloadRank=true&stars=true
 
-[travis-image]: https://travis-ci.com/theGlenn/graphql-resolvers-chain.svg?branch=master
-[travis-url]: https://travis-ci.com/theGlenn/graphql-resolvers-chain
+[travis-image]: https://travis-ci.com/theGlenn/graphql-resolved.svg?branch=master
+[travis-url]: https://travis-ci.com/theGlenn/graphql-resolved
 
 ## Installing
 
